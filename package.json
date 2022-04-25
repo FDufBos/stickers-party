@@ -5,5 +5,8 @@
   "repository": "https://github.com/FDufBos/stickers-party",
   "author": "FDufBos",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "devDependencies": {
+    "parcel": "^2.5.0"
+  }
 }
