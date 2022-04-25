@@ -6,6 +6,7 @@
   "license": "MIT",
   "private": false,
   "devDependencies": {
+    "@parcel/transformer-sass": "2.5.0",
     "parcel": "^2.5.0"
   }
 }
