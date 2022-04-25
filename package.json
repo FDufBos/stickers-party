@@ -9,7 +9,5 @@
     "@parcel/transformer-sass": "2.5.0",
     "parcel": "^2.5.0"
   },
-  "dependencies": {
-    "reset-css": "^5.0.1"
-  }
+  "dependencies": {}
 }
