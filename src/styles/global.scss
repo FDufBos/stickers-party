@@ -17,10 +17,13 @@ $color-light: white;
 $color-dark: #0d0e0e;
 
 @keyframes popOut {
-  0% { transform: scale(1)}
-  70% { transform: scale(1.35) }
-  86% { transform: scale(0.8); opacity: 1; }
-  100% { transform: scale(0.4); opacity: 0; }
+  0% { transform: scale(1); opacity: 1}
+  100% { transform: scale(0); opacity: 0; }
+}
+
+@keyframes popIn {
+  0% { transform: scale(0); visibility: visible;}
+  100% { transform: scale(1); visibility: visible;}
 }
 
 @mixin respond-medium {
@@ -53,7 +56,7 @@ header{
     height: 30%;
   }
   #logo.scrolled{
-    animation: popOut 500ms forwards ease;
+    animation: popOut 600ms forwards cubic-bezier(.83,-0.74,.86,-0.33);
   }
 }
 
@@ -164,20 +167,26 @@ h2{
     border: 2px solid transparent;
     transition: all 100ms;
   }
+
+  img:last-child{
+    visibility: hidden;
+  }
+  img:last-child.scrolled{
+    animation: popIn 600ms forwards cubic-bezier(.06,1.28,.44,1.77);
+    animation-delay: 700ms;
+  }
+  
   img:hover{
-    
     border: 2px solid $color-light;
     margin: 0;
     transform: scale(1.5);
     padding: 4px;
     border-radius: 999px;
     transition: all ease-in 100ms;
-    cursor:pointer;
-    background-color: $color-dark;
+    cursor: pointer;
+    background-color: $color-light;
   }
-  img:last-child{
-    color: black;
-  }
+
 }
 
 footer{

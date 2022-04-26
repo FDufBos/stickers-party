@@ -1,6 +1,7 @@
 //header animation
 
-const logoTag = document.querySelector("#logo")
+const logoTag = document.querySelector("#logo");
+const trayEyesTag = document.querySelector("#sticker-tray img:last-child");
 
 //when page is scrolled to a certain point (80px)
 //make eyes scale down until it disappears
@@ -10,9 +11,8 @@ const logoTag = document.querySelector("#logo")
 document.addEventListener("scroll", () => {
   const pixels = window.pageYOffset;
 
-  if(pixels > 20){
-    logoTag.classList.add("scrolled")
-  } else{
-    logoTag.classList.remove("scrolled")
+  if (pixels > 40) {
+    logoTag.classList.add("scrolled");
+    trayEyesTag.classList.add("scrolled");
   }
-})
+});
