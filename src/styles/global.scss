@@ -16,6 +16,13 @@ $footer-font-size: 16px;
 $color-light: white;
 $color-dark: #0d0e0e;
 
+@keyframes popOut {
+  0% { transform: scale(1)}
+  70% { transform: scale(1.35) }
+  86% { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(0.4); opacity: 0; }
+}
+
 @mixin respond-medium {
   @media (max-width: 900px) { @content }
 }
@@ -37,9 +44,16 @@ header{
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  top: 0;
   height: 80px;
-  img{
+  width: 100%;
+  z-index: 100;
+  #logo{
     height: 30%;
+  }
+  #logo.scrolled{
+    animation: popOut 500ms forwards ease;
   }
 }
 
@@ -110,40 +124,60 @@ h2{
 #sticker-tray{
   z-index: 100;
   position: fixed;
-  bottom: 40px;
-  left: 40px;
+  bottom: 60px;
+  left: 50px;
 
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  
+  
   align-items: center;
 
   border: 1px solid $color-light;
-  border-radius: 999px;
+  border-bottom: 2px solid $color-light;
+  border-right: 2px solid $color-light;
+  border-radius: 30px;
+  gap: 2px;
+  width: 200px;
+  height: auto;
+  padding: 10px 10px;
 
-  width: 360px;
-  height: 40px;
-  padding: 0 10px;
+  // background-color: $color-dark;
+  backdrop-filter: blur(24px);
+  // backdrop-filter: opacity(100%);
 
-  background-color: $color-dark;
+  @include respond-medium {
+    width: 200px;
+    height: 80px;
+
+    bottom: 20px;
+    left: 10px;
+  }
   
   img{
     width: 26px;
     height: auto;
     padding: auto;
+    margin: 4px;
     flex-shrink: 1;
-    border: 2px solid $color-dark;
+    border: 2px solid transparent;
     transition: all 100ms;
   }
   img:hover{
+    
     border: 2px solid $color-light;
-    padding: 2px;
+    margin: 0;
+    transform: scale(1.5);
+    padding: 4px;
     border-radius: 999px;
     transition: all ease-in 100ms;
     cursor:pointer;
+    background-color: $color-dark;
   }
-   
+  img:last-child{
+    color: black;
+  }
 }
 
 footer{
@@ -151,4 +185,8 @@ footer{
   justify-content: center;
   margin: 40px;
   font-size: $footer-font-size;
+}
+
+.hidden{
+  visibility: hidden;
 }
