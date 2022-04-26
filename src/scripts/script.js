@@ -16,3 +16,41 @@ document.addEventListener("scroll", () => {
     trayEyesTag.classList.add("scrolled");
   }
 });
+
+
+
+//Parallax
+const sections = document.querySelectorAll("section")
+const addMovement = () => {
+  //get top and then middle of window
+  const topViewport = window.pageYOffset
+  const midViewport = topViewport + (window.innerHeight * 0.5)
+
+  sections.forEach(section => {
+    section.style.color = "red"
+    //get middle of each section
+    const topSection = section.offsetTop
+    const midSection = topSection + (section.offsetHeight * 0.5)
+    
+    //get distance between section from the visible area of page
+    const distanceToSection = midView - midSection
+    
+    //picking tags to parallax
+    const image = section.querySelector("img")
+    const contentTag = section.querySelector("div")
+
+    //apply parallax
+    section.style.color = "red"
+
+  });
+}
+
+addMovement()
+
+document.addEventListener("scroll", () => {
+  addMovement()
+})
+
+window.addEventListener("resize", () =>{
+  addMovement()
+}) 
