@@ -168,6 +168,8 @@ h2{
     transition: all 100ms;
   }
 
+  // 🚨 Need to fix eyes to have same bounding as rest of img
+
   img:last-child{
     visibility: hidden;
   }
