@@ -27,6 +27,8 @@ const addMovement = () => {
   const midViewport = topViewport + (window.innerHeight * 0.5)
 
   sections.forEach(section => {
+    //🚨🚨🚨🚨 Why doesn't this make all the sections' color red??🚨🚨🚨
+    //When I move line 32 down to line 46 it doesn't even affect the first section
     section.style.color = "red"
     //get middle of each section
     const topSection = section.offsetTop
