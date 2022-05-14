@@ -27,22 +27,23 @@ const addMovement = () => {
   const midViewport = topViewport + (window.innerHeight * 0.5)
 
   sections.forEach(section => {
-    //🚨🚨🚨🚨 Why doesn't this make all the sections' color red??🚨🚨🚨
-    //When I move line 32 down to line 46 it doesn't even affect the first section
-    section.style.color = "red"
+  
     //get middle of each section
     const topSection = section.offsetTop
     const midSection = topSection + (section.offsetHeight * 0.5)
     
     //get distance between section from the visible area of page
-    const distanceToSection = midView - midSection
+    const distanceToSection = midViewport - midSection
     
     //picking tags to parallax
     const image = section.querySelector("img")
     const contentTag = section.querySelector("div")
 
+    const distToSectionModifier = distanceToSection * 0.018
+
     //apply parallax
-    section.style.color = "red"
+    contentTag.style.transform = `rotate(${distToSectionModifier}deg)`
+    
 
   });
 }
