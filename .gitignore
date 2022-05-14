@@ -1,5 +1,5 @@
 .DS_Store
-.parcel_cache/
+.parcel-cache/
 dist/
 node_modules
 .parcel-cache/data.mdb
