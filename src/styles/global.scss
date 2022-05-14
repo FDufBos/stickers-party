@@ -52,6 +52,7 @@ body {
   font-size: $font-size;
   font-weight: $font-weight;
   line-height: $font-leading;
+  transition: background-color 300ms ease;
 }
 
 h1 {

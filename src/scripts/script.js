@@ -19,8 +19,10 @@ document.addEventListener("scroll", () => {
 
 
 
-//Parallax
+//Parallax & Background Color
 const sections = document.querySelectorAll("section")
+const bodyTag = document.querySelector("body")
+
 const addMovement = () => {
   //get top and then middle of window
   const topViewport = window.pageYOffset
@@ -49,6 +51,12 @@ const addMovement = () => {
 
     //apply parallax
     contentTag.style.transform = `translateY(${distToSectionModifier}px)`
+
+    //check the background
+    if (distanceToSection > -300) {
+      const dataBackground = section.getAttribute("data-background")
+      bodyTag.style.backgroundColor = dataBackground
+    }
   });
 }
 
