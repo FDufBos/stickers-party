@@ -11,7 +11,7 @@ const trayEyesTag = document.querySelector("#sticker-tray img:last-child");
 document.addEventListener("scroll", () => {
   const pixels = window.pageYOffset;
 
-  if (pixels > 40) {
+  if (pixels > 600) {
     logoTag.classList.add("scrolled");
     trayEyesTag.classList.add("scrolled");
   }
@@ -26,7 +26,7 @@ const addMovement = () => {
   const topViewport = window.pageYOffset
   const midViewport = topViewport + (window.innerHeight * 0.5)
 
-  sections.forEach(section => {
+  sections.forEach((section, index) => {
   
     //get middle of each section
     const topSection = section.offsetTop
@@ -36,15 +36,19 @@ const addMovement = () => {
     const distanceToSection = midViewport - midSection
     
     //picking tags to parallax
-    const image = section.querySelector("img")
     const contentTag = section.querySelector("div")
 
-    const distToSectionModifier = distanceToSection * 0.018
+    let distToSectionModifier = distanceToSection * 0.1
+    //for all the even sections (indices), make content move up instead of down
+    //is the index divisible by 2
+    //a.k.a. is the index's remainder 0? (modulo operator time: %)
+    //this is also why distToSectionModifier is a let and not a const
+    if (index%2 == 0){
+      distToSectionModifier = distanceToSection * -0.1;
+    }
 
     //apply parallax
-    contentTag.style.transform = `rotate(${distToSectionModifier}deg)`
-    
-
+    contentTag.style.transform = `translateY(${distToSectionModifier}px)`
   });
 }
 
