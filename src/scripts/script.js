@@ -108,6 +108,44 @@ const stickers = [
   new URL("../assets/stickers/eyes.png", import.meta.url),
 ];
 
+const largeCursors = [
+  new URL("../assets/stickers/large/rainbow.png", import.meta.url),
+  new URL("../assets/stickers/large/heart.png", import.meta.url),
+  new URL("../assets/stickers/large/cactus.png", import.meta.url),
+  new URL("../assets/stickers/large/sun.png", import.meta.url),
+  new URL("../assets/stickers/large/clover.png", import.meta.url),
+  new URL("../assets/stickers/large/cheese.png", import.meta.url),
+  new URL("../assets/stickers/large/sparkle.png", import.meta.url),
+  new URL("../assets/stickers/large/ufo.png", import.meta.url),
+  new URL("../assets/stickers/large/fire.png", import.meta.url),
+  new URL("../assets/stickers/large/eyes.png", import.meta.url),
+]
+const mediumCursors = [
+  new URL("../assets/stickers/medium/rainbow.png", import.meta.url),
+  new URL("../assets/stickers/medium/heart.png", import.meta.url),
+  new URL("../assets/stickers/medium/cactus.png", import.meta.url),
+  new URL("../assets/stickers/medium/sun.png", import.meta.url),
+  new URL("../assets/stickers/medium/clover.png", import.meta.url),
+  new URL("../assets/stickers/medium/cheese.png", import.meta.url),
+  new URL("../assets/stickers/medium/sparkle.png", import.meta.url),
+  new URL("../assets/stickers/medium/ufo.png", import.meta.url),
+  new URL("../assets/stickers/medium/fire.png", import.meta.url),
+  new URL("../assets/stickers/medium/eyes.png", import.meta.url),
+]
+const smallCursors = [
+  new URL("../assets/stickers/small/rainbow.png", import.meta.url),
+  new URL("../assets/stickers/small/heart.png", import.meta.url),
+  new URL("../assets/stickers/small/cactus.png", import.meta.url),
+  new URL("../assets/stickers/small/sun.png", import.meta.url),
+  new URL("../assets/stickers/small/clover.png", import.meta.url),
+  new URL("../assets/stickers/small/cheese.png", import.meta.url),
+  new URL("../assets/stickers/small/sparkle.png", import.meta.url),
+  new URL("../assets/stickers/small/ufo.png", import.meta.url),
+  new URL("../assets/stickers/small/fire.png", import.meta.url),
+  new URL("../assets/stickers/small/eyes.png", import.meta.url),
+]
+
+// bodyTag.style.cursor = `url('${stickers[0]}'), auto`;
 //select sticker from #sticker-tray
 
 let number = 0;
@@ -116,6 +154,7 @@ const chooseSticker = () => {
   stickerSelectorTag.forEach((stickerSelector) => {
     stickerSelector.addEventListener("click", () => {
       number = parseInt(stickerSelector.getAttribute("data-index"));
+      bodyTag.style.cursor = `url('${mediumCursors[number]}'), auto`;
     });
   });
 };
@@ -145,3 +184,19 @@ document.addEventListener("click", (event) => {
   snd.play(Snd.SOUNDS.TAP, {volume:0.2});
   addSticker(event.pageX, event.pageY);
 });
+
+//✨✨✨ Sticker Tray ✨✨✨
+const trayContainer = document.querySelector(".tray-container");
+const brushTrayTag = document.querySelector(".brush-tray");
+
+trayContainer.addEventListener("mouseover", () => {
+  brushTrayTag.style.bottom = "0px"
+  brushTrayTag.style.opacity = "1"
+  brushTrayTag.style.visibility = "visible"
+})
+
+trayContainer.addEventListener("mouseout", () => {
+  brushTrayTag.style.bottom = "43px"
+  brushTrayTag.style.opacity = "0"
+  brushTrayTag.style.visibility = "hidden"
+})
