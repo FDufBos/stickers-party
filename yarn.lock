@@ -957,6 +957,11 @@ escape-string-regexp@^1.0.5:
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
 
+events@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/events/-/events-3.3.0.tgz#31a95ad0a924e2d2c419a813aeb2c4e878ea7400"
+  integrity sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q==
+
 fill-range@^7.0.1:
   version "7.0.1"
   resolved "https://registry.yarnpkg.com/fill-range/-/fill-range-7.0.1.tgz#1919a6a7c75fe38b2c7c77e5198535da9acdda40"
@@ -1324,6 +1329,13 @@ semver@^5.7.0, semver@^5.7.1:
   version "5.7.1"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.7.1.tgz#a954f931aeba508d307bbf069eff0c01c96116f7"
   integrity sha512-sauaDf/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7QzpudqbCI0qXFfOasHdyNDGQ==
+
+snd-lib@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/snd-lib/-/snd-lib-1.0.2.tgz#fde38f752f7249f1d4fddbadb61491b237502574"
+  integrity sha512-mh4fKOmgqkTz40Iigp3G34ZYq8qQcCvdW9iYozf20wqxQCu+p9PbzAIAIj2q/OeOmkANlVOSruo/PJOY3O68QA==
+  dependencies:
+    events "^3.3.0"
 
 "source-map-js@>=0.6.2 <2.0.0":
   version "1.0.2"

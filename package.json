@@ -9,5 +9,7 @@
     "@parcel/transformer-sass": "2.5.0",
     "parcel": "^2.5.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "snd-lib": "^1.0.2"
+  }
 }
