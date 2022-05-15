@@ -1,3 +1,26 @@
+//✨✨✨UI Sound✨✨✨
+import Snd from 'snd-lib';
+
+const snd = new Snd();
+
+// Get all anchor elements.
+const images = document.getElementsByTagName('img');
+
+// Event handler for click
+const onClick = (e) => {
+	
+}
+
+// Load audio file
+snd.load(Snd.KITS.SND01).then(() => {
+	// Listen click event of all anchor elements.
+	for (let i=0; i<images.length; i++) {
+		images[i].addEventListener('click', onClick)
+	}
+})
+
+
+
 //✨✨✨header animation✨✨✨
 
 const logoTag = document.querySelector("#logo");
@@ -119,5 +142,6 @@ const addSticker = (x, y) => {
 };
 
 document.addEventListener("click", (event) => {
+  snd.play(Snd.SOUNDS.TAP, {volume:0.2});
   addSticker(event.pageX, event.pageY);
 });
