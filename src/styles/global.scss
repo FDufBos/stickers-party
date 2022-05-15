@@ -53,6 +53,8 @@ body {
   font-weight: $font-weight;
   line-height: $font-leading;
   transition: background-color 300ms ease;
+
+  overflow-x: hidden;
 }
 
 h1 {
@@ -104,6 +106,7 @@ main {
     gap: 40px;
     padding: 80px 0px;
     height: 85vh;
+    margin: 40px;
 
     @include respond-medium {
       flex-direction: column;
@@ -215,6 +218,22 @@ h2 {
     background-color: $color-light;
   }
 
+}
+
+
+div.stickers{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  z-index: 5;
+
+  img{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 48px;
+    height: auto;
+  }
 }
 
 footer {

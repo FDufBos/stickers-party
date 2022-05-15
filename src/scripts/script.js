@@ -1,4 +1,4 @@
-//header animation
+//✨✨✨header animation✨✨✨
 
 const logoTag = document.querySelector("#logo");
 const trayEyesTag = document.querySelector("#sticker-tray img:last-child");
@@ -17,7 +17,7 @@ document.addEventListener("scroll", () => {
   }
 });
 
-//Parallax & Background Color
+//✨✨✨Parallax & Background Color✨✨✨
 const sections = document.querySelectorAll("section");
 const bodyTag = document.querySelector("body");
 
@@ -65,4 +65,59 @@ document.addEventListener("scroll", () => {
 
 window.addEventListener("resize", () => {
   addMovement();
+});
+
+//✨✨✨ Stickers ✨✨✨
+
+const stickersTag = document.querySelector("div.stickers");
+const stickerSelectorTag = document.querySelectorAll("#sticker-tray img");
+
+const stickers = [
+  new URL("../assets/stickers/rainbow.png", import.meta.url),
+  new URL("../assets/stickers/heart.png", import.meta.url),
+  new URL("../assets/stickers/cactus.png", import.meta.url),
+  new URL("../assets/stickers/sun.png", import.meta.url),
+  new URL("../assets/stickers/clover.png", import.meta.url),
+  new URL("../assets/stickers/cheese.png", import.meta.url),
+  new URL("../assets/stickers/sparkle.png", import.meta.url),
+  new URL("../assets/stickers/ufo.png", import.meta.url),
+  new URL("../assets/stickers/fire.png", import.meta.url),
+  new URL("../assets/stickers/eyes.png", import.meta.url),
+];
+
+//select sticker from #sticker-tray
+
+let number = 0;
+
+const chooseSticker = () => {
+  stickerSelectorTag.forEach((stickerSelector) => {
+    stickerSelector.addEventListener("click", () => {
+      number = parseInt(stickerSelector.getAttribute("data-index"));
+    });
+  });
+};
+
+number = chooseSticker();
+
+//when user clicks on document place selected sticker in position of the cursor
+//play sound when sticker is placed
+
+const addSticker = (x, y) => {
+  //<img src="sticker.png" />
+  const img = document.createElement("img");
+  if (stickers[number] === undefined) {
+    img.setAttribute("src", stickers[0]);
+  } else {
+    img.setAttribute("src", stickers[number]);
+  }
+  stickersTag.appendChild(img);
+
+  //remove half the window width
+  //so stickers are centered
+  img.style.left = x - window.innerWidth / 2 + "px";
+  img.style.top = y + "px";
+};
+
+document.addEventListener("click", (event) => {
+  addSticker(event.pageX, event.pageY);
 });
