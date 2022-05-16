@@ -88,10 +88,15 @@ const addSticker = (x, y) => {
 };
 
 document.addEventListener("click", (event) => {
+  if (event.target.classList.contains("tray") || event.target.classList.contains("selector") || event.target.classList.contains("no-click")){
+    
+  } else {
   //play sound when sticker is placed
   snd.play(Snd.SOUNDS.TAP, { volume: 0.2 });
   addSticker(event.pageX, event.pageY);
   console.log(stickerCursorTag);
+  }
+  
 });
 
 //✨✨✨ Sticker Tray Dropdown✨✨✨
@@ -99,6 +104,7 @@ const trayContainer = document.querySelector(".tray-container");
 const brushTrayTag = document.querySelector(".brush-tray");
 
 trayContainer.addEventListener("mouseover", () => {
+  bodyTag.style.cursor = "cursor"
   brushTrayTag.style.bottom = "-3px";
   brushTrayTag.style.opacity = "1";
   brushTrayTag.style.visibility = "visible";
