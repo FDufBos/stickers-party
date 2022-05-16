@@ -198,6 +198,7 @@ h2 {
   padding: 6px 8px;
   transition: all 200ms ease;
   z-index:98;
+  visibility: hidden;
 
   .selector{
     background-color: $color-light;
@@ -215,7 +216,8 @@ h2 {
   }
 }
 
-#sticker-tray {
+
+.sticker-tray {
   img {
     width: 26px;
     height: auto;
@@ -225,8 +227,6 @@ h2 {
     border: 2px solid transparent;
     transition: all 100ms;
   }
-
-  // 🚨 Need to fix eyes to have same bounding as rest of img
 
   img:last-child {
     visibility: hidden;
