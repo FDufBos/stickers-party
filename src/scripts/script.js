@@ -3,6 +3,65 @@ import Snd from 'snd-lib';
 import { stickerSelectorTag, number, bodyTag, mediumCursors, stickers, stickersTag } from './parallax';
 import { snd } from './uiSound';
 
+
+
+
+
+
+//✨✨✨ Stickers, Sticker Selector, Brush Selector ✨✨✨
+export const stickersTag = document.querySelector("div.stickers");
+const stickerCursorTag = document.querySelectorAll("div.stickers img");
+export const stickerSelectorTag = document.querySelectorAll(".sticker-tray img");
+console.log(stickerCursorTag);
+export const stickers = [
+  new URL("../assets/stickers/rainbow.png", import.meta.url),
+  new URL("../assets/stickers/heart.png", import.meta.url),
+  new URL("../assets/stickers/cactus.png", import.meta.url),
+  new URL("../assets/stickers/sun.png", import.meta.url),
+  new URL("../assets/stickers/clover.png", import.meta.url),
+  new URL("../assets/stickers/cheese.png", import.meta.url),
+  new URL("../assets/stickers/sparkle.png", import.meta.url),
+  new URL("../assets/stickers/ufo.png", import.meta.url),
+  new URL("../assets/stickers/fire.png", import.meta.url),
+  new URL("../assets/stickers/eyes.png", import.meta.url),
+];
+const largeCursors = [
+  new URL("../assets/stickers/large/rainbow.png", import.meta.url),
+  new URL("../assets/stickers/large/heart.png", import.meta.url),
+  new URL("../assets/stickers/large/cactus.png", import.meta.url),
+  new URL("../assets/stickers/large/sun.png", import.meta.url),
+  new URL("../assets/stickers/large/clover.png", import.meta.url),
+  new URL("../assets/stickers/large/cheese.png", import.meta.url),
+  new URL("../assets/stickers/large/sparkle.png", import.meta.url),
+  new URL("../assets/stickers/large/ufo.png", import.meta.url),
+  new URL("../assets/stickers/large/fire.png", import.meta.url),
+  new URL("../assets/stickers/large/eyes.png", import.meta.url),
+];
+export const mediumCursors = [
+  new URL("../assets/stickers/medium/rainbow.png", import.meta.url),
+  new URL("../assets/stickers/medium/heart.png", import.meta.url),
+  new URL("../assets/stickers/medium/cactus.png", import.meta.url),
+  new URL("../assets/stickers/medium/sun.png", import.meta.url),
+  new URL("../assets/stickers/medium/clover.png", import.meta.url),
+  new URL("../assets/stickers/medium/cheese.png", import.meta.url),
+  new URL("../assets/stickers/medium/sparkle.png", import.meta.url),
+  new URL("../assets/stickers/medium/ufo.png", import.meta.url),
+  new URL("../assets/stickers/medium/fire.png", import.meta.url),
+  new URL("../assets/stickers/medium/eyes.png", import.meta.url),
+];
+const smallCursors = [
+  new URL("../assets/stickers/small/rainbow.png", import.meta.url),
+  new URL("../assets/stickers/small/heart.png", import.meta.url),
+  new URL("../assets/stickers/small/cactus.png", import.meta.url),
+  new URL("../assets/stickers/small/sun.png", import.meta.url),
+  new URL("../assets/stickers/small/clover.png", import.meta.url),
+  new URL("../assets/stickers/small/cheese.png", import.meta.url),
+  new URL("../assets/stickers/small/sparkle.png", import.meta.url),
+  new URL("../assets/stickers/small/ufo.png", import.meta.url),
+  new URL("../assets/stickers/small/fire.png", import.meta.url),
+  new URL("../assets/stickers/small/eyes.png", import.meta.url),
+];
+export let number = 0;
 //sticker selector
 const chooseSticker = () => {
   stickerSelectorTag.forEach((stickerSelector) => {
