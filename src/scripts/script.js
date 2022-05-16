@@ -1,19 +1,14 @@
 //✨✨✨UI Sound✨✨✨
-import Snd from 'snd-lib';
-import { stickerSelectorTag, number, bodyTag, mediumCursors, stickers, stickersTag } from './parallax';
-import { snd } from './uiSound';
-
-
-
-
-
+import Snd from "snd-lib";
+import {} from "./parallax";
+import { snd } from "./uiSound";
 
 //✨✨✨ Stickers, Sticker Selector, Brush Selector ✨✨✨
-export const stickersTag = document.querySelector("div.stickers");
+const stickersTag = document.querySelector("div.stickers");
 const stickerCursorTag = document.querySelectorAll("div.stickers img");
-export const stickerSelectorTag = document.querySelectorAll(".sticker-tray img");
-console.log(stickerCursorTag);
-export const stickers = [
+const stickerSelectorTag = document.querySelectorAll(".sticker-tray img");
+
+const stickers = [
   new URL("../assets/stickers/rainbow.png", import.meta.url),
   new URL("../assets/stickers/heart.png", import.meta.url),
   new URL("../assets/stickers/cactus.png", import.meta.url),
@@ -37,7 +32,7 @@ const largeCursors = [
   new URL("../assets/stickers/large/fire.png", import.meta.url),
   new URL("../assets/stickers/large/eyes.png", import.meta.url),
 ];
-export const mediumCursors = [
+const mediumCursors = [
   new URL("../assets/stickers/medium/rainbow.png", import.meta.url),
   new URL("../assets/stickers/medium/heart.png", import.meta.url),
   new URL("../assets/stickers/medium/cactus.png", import.meta.url),
@@ -61,7 +56,8 @@ const smallCursors = [
   new URL("../assets/stickers/small/fire.png", import.meta.url),
   new URL("../assets/stickers/small/eyes.png", import.meta.url),
 ];
-export let number = 0;
+let number = 0;
+
 //sticker selector
 const chooseSticker = () => {
   stickerSelectorTag.forEach((stickerSelector) => {
@@ -94,8 +90,9 @@ const addSticker = (x, y) => {
 
 document.addEventListener("click", (event) => {
   //play sound when sticker is placed
-  snd.play(Snd.SOUNDS.TAP, {volume:0.2});
+  snd.play(Snd.SOUNDS.TAP, { volume: 0.2 });
   addSticker(event.pageX, event.pageY);
+  console.log(stickerCursorTag);
 });
 
 //✨✨✨ Sticker Tray Dropdown✨✨✨
@@ -103,13 +100,13 @@ const trayContainer = document.querySelector(".tray-container");
 const brushTrayTag = document.querySelector(".brush-tray");
 
 trayContainer.addEventListener("mouseover", () => {
-  brushTrayTag.style.bottom = "-3px"
-  brushTrayTag.style.opacity = "1"
-  brushTrayTag.style.visibility = "visible"
-})
+  brushTrayTag.style.bottom = "-3px";
+  brushTrayTag.style.opacity = "1";
+  brushTrayTag.style.visibility = "visible";
+});
 
 trayContainer.addEventListener("mouseout", () => {
-  brushTrayTag.style.bottom = "43px"
-  brushTrayTag.style.opacity = "0"
-  brushTrayTag.style.visibility = "hidden"
-})
+  brushTrayTag.style.bottom = "43px";
+  brushTrayTag.style.opacity = "0";
+  brushTrayTag.style.visibility = "hidden";
+});
