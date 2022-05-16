@@ -1,6 +1,5 @@
-//✨✨✨UI Sound✨✨✨
 import Snd from "snd-lib";
-import {} from "./parallax";
+import {bodyTag} from "./parallax";
 import { snd } from "./uiSound";
 
 //✨✨✨ Stickers, Sticker Selector, Brush Selector ✨✨✨
@@ -63,7 +62,7 @@ const chooseSticker = () => {
   stickerSelectorTag.forEach((stickerSelector) => {
     stickerSelector.addEventListener("click", () => {
       number = parseInt(stickerSelector.getAttribute("data-index"));
-      bodyTag.style.cursor = `url('${mediumCursors[number]}'), auto`;
+      bodyTag.style.cursor = `url('${mediumCursors[number]}') 24 24, auto`;
     });
   });
 };
@@ -84,7 +83,7 @@ const addSticker = (x, y) => {
 
   //remove half the window width
   //so stickers are centered
-  img.style.left = x - window.innerWidth / 2 + "px";
+  img.style.left = (x - window.innerWidth / 2) + "px";
   img.style.top = y + "px";
 };
 
