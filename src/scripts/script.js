@@ -1,4 +1,5 @@
 import Snd from "snd-lib";
+import {} from "./headerAnimation.js"
 import {bodyTag} from "./parallax";
 import { snd } from "./uiSound";
 
@@ -62,6 +63,7 @@ const chooseSticker = () => {
   stickerSelectorTag.forEach((stickerSelector) => {
     stickerSelector.addEventListener("click", () => {
       number = parseInt(stickerSelector.getAttribute("data-index"));
+      //set custom cursors (the 24 sets position of cursor)
       bodyTag.style.cursor = `url('${mediumCursors[number]}') 24 24, auto`;
     });
   });
@@ -93,13 +95,14 @@ document.addEventListener("click", (event) => {
   } else {
   //play sound when sticker is placed
   snd.play(Snd.SOUNDS.TAP, { volume: 0.2 });
+  
   addSticker(event.pageX, event.pageY);
   console.log(stickerCursorTag);
   }
   
 });
 
-//✨✨✨ Sticker Tray Dropdown✨✨✨
+//✨✨✨ Sticker Tray Dropdown Effect✨✨✨
 const trayContainer = document.querySelector(".tray-container");
 const brushTrayTag = document.querySelector(".brush-tray");
 
@@ -115,3 +118,12 @@ trayContainer.addEventListener("mouseout", () => {
   brushTrayTag.style.opacity = "0";
   brushTrayTag.style.visibility = "hidden";
 });
+
+
+
+//✨✨✨ Change brush size✨✨✨
+//switch between small, medium, and large stickers and
+//when you click on small, medium, and large selectors
+//in the brush tray
+
+// const brushSizes = 
