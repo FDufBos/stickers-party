@@ -9,6 +9,7 @@ const stickerCursorTag = document.querySelectorAll("div.stickers img");
 const stickerSelectorTag = document.querySelectorAll(".sticker-tray img");
 const trayContainer = document.querySelector(".tray-container");
 const brushTrayTag = document.querySelector(".brush-tray");
+const brushSelectorTags = brushTrayTag.querySelectorAll(".brush")
 
 const stickers = [
   new URL("../assets/stickers/rainbow.png", import.meta.url),
@@ -22,7 +23,7 @@ const stickers = [
   new URL("../assets/stickers/fire.png", import.meta.url),
   new URL("../assets/stickers/eyes.png", import.meta.url),
 ];
-const largeCursors = [
+const largeBrush = [
   new URL("../assets/stickers/large/rainbow.png", import.meta.url),
   new URL("../assets/stickers/large/heart.png", import.meta.url),
   new URL("../assets/stickers/large/cactus.png", import.meta.url),
@@ -34,7 +35,7 @@ const largeCursors = [
   new URL("../assets/stickers/large/fire.png", import.meta.url),
   new URL("../assets/stickers/large/eyes.png", import.meta.url),
 ];
-const mediumCursors = [
+const mediumBrush = [
   new URL("../assets/stickers/medium/rainbow.png", import.meta.url),
   new URL("../assets/stickers/medium/heart.png", import.meta.url),
   new URL("../assets/stickers/medium/cactus.png", import.meta.url),
@@ -46,7 +47,7 @@ const mediumCursors = [
   new URL("../assets/stickers/medium/fire.png", import.meta.url),
   new URL("../assets/stickers/medium/eyes.png", import.meta.url),
 ];
-const smallCursors = [
+const smallBrush = [
   new URL("../assets/stickers/small/rainbow.png", import.meta.url),
   new URL("../assets/stickers/small/heart.png", import.meta.url),
   new URL("../assets/stickers/small/cactus.png", import.meta.url),
@@ -59,7 +60,32 @@ const smallCursors = [
   new URL("../assets/stickers/small/eyes.png", import.meta.url),
 ];
 
+//✨✨✨ Change brush size✨✨✨
 
+//0. Start on default brushSize
+//1. Click on desired brush size in tray (small, medium, large)
+//2. Switch brushSize from current brushSize to the one selected in tray
+
+
+const brushes = {
+  small:"12px",
+  medium:"24px",
+  large: "48px"
+};
+let brushSize = "medium"
+
+
+
+
+brushSelectorTags.forEach(brushSelector => {
+  brushSelector.addEventListener("click", (event) => {
+    brushSize = event.target.getAttribute("data-brushSize")
+  })
+})
+
+
+
+//stickers
 let number = 0;
 
 //sticker selector
@@ -68,7 +94,7 @@ const chooseSticker = () => {
     stickerSelector.addEventListener("click", () => {
       number = parseInt(stickerSelector.getAttribute("data-index"));
       //set custom cursors (the 24 sets position of cursor)
-      bodyTag.style.cursor = `url('${mediumCursors[number]}') 24 24, auto`;
+      bodyTag.style.cursor = `url('${mediumBrush[number]}') 24 24, auto`;
     });
   });
 };
@@ -90,18 +116,20 @@ const addSticker = (x, y) => {
   //remove half the window width so stickers are centered
   img.style.left = (x - window.innerWidth / 2) + "px";
   img.style.top = y + "px";
+  img.style.width = brushes[brushSize];
+  img.style.height = brushes[brushSize];
 };
 
 //click event that runs addSticker
 document.addEventListener("click", (event) => {
   if (event.target.classList.contains("tray") || event.target.classList.contains("selector") || event.target.classList.contains("no-click")){
-    
+    //do nothing
   } else {
   //play sound when sticker is placed
   snd.play(Snd.SOUNDS.TAP, { volume: 0.2 });
   
   addSticker(event.pageX, event.pageY);
-  console.log(stickerCursorTag);
+  
   }
   
 });
@@ -128,12 +156,3 @@ trayContainer.addEventListener("mouseover", () => {
 trayContainer.addEventListener("mouseout", () => {
   hideTray()
 });
-
-
-
-//✨✨✨ Change brush size✨✨✨
-//switch between small, medium, and large stickers and
-//when you click on small, medium, and large selectors
-//in the brush tray
-
-// const brushSizes = 
