@@ -66,20 +66,30 @@ const smallBrush = [
 //1. Click on desired brush size in tray (small, medium, large)
 //2. Switch brushSize from current brushSize to the one selected in tray
 
-
 const brushes = {
-  small:"12px",
-  medium:"24px",
-  large: "48px"
+  small:"24px",
+  medium:"48px",
+  large: "72px"
 };
+
 let brushSize = "medium"
 
-
+function brushCursorSelector(){
+  if (brushSize == "small"){
+    bodyTag.style.cursor = `url('${smallBrush[number]}') 12 12, auto`;
+    // stickerCursorTag.style.transform = "translateY(48px)"
+  } else if (brushSize == "medium"){
+    bodyTag.style.cursor = `url('${mediumBrush[number]}') 24 24, auto`;
+  } else {
+    bodyTag.style.cursor = `url('${largeBrush[number]}') 36 36, auto`;
+  }
+}
 
 
 brushSelectorTags.forEach(brushSelector => {
   brushSelector.addEventListener("click", (event) => {
     brushSize = event.target.getAttribute("data-brushSize")
+    brushCursorSelector()
   })
 })
 
@@ -94,7 +104,9 @@ const chooseSticker = () => {
     stickerSelector.addEventListener("click", () => {
       number = parseInt(stickerSelector.getAttribute("data-index"));
       //set custom cursors (the 24 sets position of cursor)
-      bodyTag.style.cursor = `url('${mediumBrush[number]}') 24 24, auto`;
+      //need to change image to match brushSize
+      brushCursorSelector()
+      
     });
   });
 };
