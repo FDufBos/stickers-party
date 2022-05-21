@@ -1,6 +1,6 @@
 import Snd from "snd-lib";
-import {} from "./headerAnimation.js"
-import {bodyTag} from "./parallax";
+import {} from "./headerAnimation.js";
+import { bodyTag } from "./parallax";
 import { snd } from "./uiSound";
 
 //✨✨✨ Stickers, Sticker Selector, Brush Selector ✨✨✨
@@ -9,7 +9,7 @@ const stickerCursorTag = document.querySelectorAll("div.stickers img");
 const stickerSelectorTag = document.querySelectorAll(".sticker-tray img");
 const trayContainer = document.querySelector(".tray-container");
 const brushTrayTag = document.querySelector(".brush-tray");
-const brushSelectorTags = brushTrayTag.querySelectorAll(".brush")
+const brushSelectorTags = brushTrayTag.querySelectorAll(".brush");
 
 const stickers = [
   new URL("url:../assets/stickers/rainbow.png?as=webp", import.meta.url),
@@ -67,33 +67,29 @@ const smallBrush = [
 //2. Switch brushSize from current brushSize to the one selected in tray
 
 const brushes = {
-  small:"24px",
-  medium:"48px",
-  large: "72px"
+  small: "24px",
+  medium: "48px",
+  large: "72px",
 };
 
-let brushSize = "medium"
+let brushSize = "medium";
 
-function brushCursorSelector(){
-  if (brushSize == "small"){
+function brushCursorSelector() {
+  if (brushSize == "small") {
     bodyTag.style.cursor = `url('${smallBrush[number]}') 12 12, auto`;
-    // stickerCursorTag.style.transform = "translateY(48px)"
-  } else if (brushSize == "medium"){
+  } else if (brushSize == "medium") {
     bodyTag.style.cursor = `url('${mediumBrush[number]}') 24 24, auto`;
   } else {
     bodyTag.style.cursor = `url('${largeBrush[number]}') 36 36, auto`;
   }
 }
 
-
-brushSelectorTags.forEach(brushSelector => {
+brushSelectorTags.forEach((brushSelector) => {
   brushSelector.addEventListener("click", (event) => {
-    brushSize = event.target.getAttribute("data-brushSize")
-    brushCursorSelector()
-  })
-})
-
-
+    brushSize = event.target.getAttribute("data-brushSize");
+    brushCursorSelector();
+  });
+});
 
 //stickers
 let number = 0;
@@ -105,8 +101,7 @@ const chooseSticker = () => {
       number = parseInt(stickerSelector.getAttribute("data-index"));
       //set custom cursors (the 24 sets position of cursor)
       //need to change image to match brushSize
-      brushCursorSelector()
-      
+      brushCursorSelector();
     });
   });
 };
@@ -126,7 +121,7 @@ const addSticker = (x, y) => {
   stickersTag.appendChild(img);
 
   //remove half the window width so stickers are centered
-  img.style.left = (x - window.innerWidth / 2) + "px";
+  img.style.left = x - window.innerWidth / 2 + "px";
   img.style.top = y + "px";
   img.style.width = brushes[brushSize];
   img.style.height = brushes[brushSize];
@@ -134,22 +129,24 @@ const addSticker = (x, y) => {
 
 //click event that runs addSticker
 document.addEventListener("click", (event) => {
-  if (event.target.classList.contains("tray") || event.target.classList.contains("selector") || event.target.classList.contains("no-click")){
+  if (
+    event.target.classList.contains("tray") ||
+    event.target.classList.contains("selector") ||
+    event.target.classList.contains("no-click")
+  ) {
     //do nothing
   } else {
-  //play sound when sticker is placed
-  snd.play(Snd.SOUNDS.TAP, { volume: 0.2 });
-  
-  addSticker(event.pageX, event.pageY);
-  
+    //play sound when sticker is placed
+    snd.play(Snd.SOUNDS.TAP, { volume: 0.2 });
+
+    addSticker(event.pageX, event.pageY);
   }
-  
 });
 
 //✨✨✨ Sticker Tray Dropdown Effect✨✨✨
 
 function showTray() {
-  bodyTag.style.cursor = "cursor"
+  bodyTag.style.cursor = "cursor";
   brushTrayTag.style.bottom = "-3px";
   brushTrayTag.style.opacity = "1";
   brushTrayTag.style.visibility = "visible";
@@ -162,9 +159,9 @@ function hideTray() {
 }
 
 trayContainer.addEventListener("mouseover", () => {
-  showTray()
+  showTray();
 });
 
 trayContainer.addEventListener("mouseout", () => {
-  hideTray()
+  hideTray();
 });
