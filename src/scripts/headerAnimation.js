@@ -12,5 +12,7 @@ document.addEventListener("scroll", () => {
   if (pixels > 600) {
     logoTag.classList.add("scrolled");
     trayEyesTag.classList.add("scrolled");
+  } else {
+    logoTag.classList.remove("scrolled");
   }
 });
