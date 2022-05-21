@@ -7,6 +7,8 @@ import { snd } from "./uiSound";
 const stickersTag = document.querySelector("div.stickers");
 const stickerCursorTag = document.querySelectorAll("div.stickers img");
 const stickerSelectorTag = document.querySelectorAll(".sticker-tray img");
+const trayContainer = document.querySelector(".tray-container");
+const brushTrayTag = document.querySelector(".brush-tray");
 
 const stickers = [
   new URL("../assets/stickers/rainbow.png", import.meta.url),
@@ -56,6 +58,8 @@ const smallCursors = [
   new URL("../assets/stickers/small/fire.png", import.meta.url),
   new URL("../assets/stickers/small/eyes.png", import.meta.url),
 ];
+
+
 let number = 0;
 
 //sticker selector
@@ -83,12 +87,12 @@ const addSticker = (x, y) => {
   }
   stickersTag.appendChild(img);
 
-  //remove half the window width
-  //so stickers are centered
+  //remove half the window width so stickers are centered
   img.style.left = (x - window.innerWidth / 2) + "px";
   img.style.top = y + "px";
 };
 
+//click event that runs addSticker
 document.addEventListener("click", (event) => {
   if (event.target.classList.contains("tray") || event.target.classList.contains("selector") || event.target.classList.contains("no-click")){
     
@@ -103,20 +107,26 @@ document.addEventListener("click", (event) => {
 });
 
 //✨✨✨ Sticker Tray Dropdown Effect✨✨✨
-const trayContainer = document.querySelector(".tray-container");
-const brushTrayTag = document.querySelector(".brush-tray");
 
-trayContainer.addEventListener("mouseover", () => {
+function showTray() {
   bodyTag.style.cursor = "cursor"
   brushTrayTag.style.bottom = "-3px";
   brushTrayTag.style.opacity = "1";
   brushTrayTag.style.visibility = "visible";
-});
+}
 
-trayContainer.addEventListener("mouseout", () => {
+function hideTray() {
   brushTrayTag.style.bottom = "43px";
   brushTrayTag.style.opacity = "0";
   brushTrayTag.style.visibility = "hidden";
+}
+
+trayContainer.addEventListener("mouseover", () => {
+  showTray()
+});
+
+trayContainer.addEventListener("mouseout", () => {
+  hideTray()
 });
 
 
