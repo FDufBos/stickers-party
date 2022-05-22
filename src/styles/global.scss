@@ -137,27 +137,26 @@ main {
     @include respond-medium {
       margin-top: 0%;
     }
-
+    img{
+      width: 32%;
+    }
     img {
       @include respond-medium {
         width: 70%;
-        
       }
-
     }
   }
 
   section {
+    border: 2px solid red;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
     gap: 50px;
-    padding: 180px 0px;
+    padding: 100px 0px;
     height: 60vh;
     margin: 40px;
-
-
 
     @include respond-medium {
       flex-direction: column-reverse;
@@ -170,7 +169,7 @@ main {
     }
 
     img {
-      transform: scale(1.8);
+      transform: scale(1.9);
 
       width: 50%;
       max-width: 500px;
@@ -194,6 +193,7 @@ main {
       display: flex;
       flex-direction: column;
       gap: 1.4rem;
+      max-width: 300px;
 
       color: rgba(255, 255, 255, 0.9);
 
