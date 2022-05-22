@@ -30,7 +30,7 @@ const addMovement = () => {
       }
     }
 
-    const uploadTitleTag = document.querySelector("#upload-button h2");
+    const uploadTitleTag = document.querySelector("#upload-button-container h2");
 
     //apply parallax
     contentTag.style.transform = `translateY(${distToSectionModifier}px)`;
