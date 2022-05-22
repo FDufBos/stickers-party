@@ -36,7 +36,7 @@ const addMovement = () => {
     contentTag.style.transform = `translateY(${distToSectionModifier}px)`;
 
     //check the background
-    if (topViewport > 2600) {
+    if (topViewport > 3000) {
       bodyTag.style.backgroundColor = "white";
       uploadTitleTag.style.color = "black";
     } else if (distanceToSection > -300) {
