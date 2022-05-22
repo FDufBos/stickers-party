@@ -8,8 +8,9 @@ const addMovement = () => {
 
   sections.forEach((section, index) => {
     //get middle of each section
+    
     const topSection = section.offsetTop;
-    const midSection = topSection + section.offsetHeight * 0.5;
+    const midSection = topSection + section.offsetHeight * 0.4;
 
     //get distance between section from the visible area of page
     const distanceToSection = midViewport - midSection;
@@ -22,9 +23,12 @@ const addMovement = () => {
     //is the index divisible by 2
     //a.k.a. is the index's remainder 0? (modulo operator time: %)
     //this is also why distToSectionModifier is a let and not a const
-    if (index % 2 == 0) {
-      distToSectionModifier = distanceToSection * -0.1;
+    if(window.innerWidth > 600){
+      if (index % 2 == 0) {
+        distToSectionModifier = distanceToSection * -0.1;
+      }
     }
+    
 
     //apply parallax
     contentTag.style.transform = `translateY(${distToSectionModifier}px)`;
@@ -36,7 +40,7 @@ const addMovement = () => {
     }
   });
 };
-addMovement();
+
 document.addEventListener("scroll", () => {
   addMovement();
 });
