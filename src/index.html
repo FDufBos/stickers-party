@@ -2,74 +2,175 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <! [endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Stickers Party</title>
-    <meta name="description" content="Stickers playground">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="./styles/reset.css">
-    <link rel="stylesheet" href="./styles/global.scss">
+    <meta name="description" content="Stickers playground" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/global.scss" />
   </head>
   <body>
     <header>
-      <img id="logo" src="url:assets/img/logo.svg" alt="logo"/>
+      <img id="logo" src="url:assets/img/logo.svg" alt="logo" />
     </header>
     <main>
       <section data-background="#1b4b23">
-        <img src="url:./assets/img/park.jpeg?as=webp" alt="the park">
+        <img src="url:./assets/img/park.jpeg?as=webp" alt="the park" />
         <div class="no-click">
           <h2>A park in need of some stickers</h2>
-          <p>Help by adding a rainbow 🌈 <br> or maybe some hearts ❤️</p>
+          <p>
+            Help by adding a rainbow 🌈 <br />
+            or maybe some hearts ❤️
+          </p>
         </div>
       </section>
       <section data-background="#973b26">
-        <img src="url:./assets/img/desert.jpeg?as=webp" loading="lazy" alt="the park">
+        <img
+          src="url:./assets/img/desert.jpeg?as=webp"
+          loading="lazy"
+          alt="the park"
+        />
         <div class="no-click">
           <h2>The desert too 🏜</h2>
-          <p>Try a cactus 🌵 <br> or perhaps some sun 🌞</p>
+          <p>
+            Try a cactus 🌵 <br />
+            or perhaps some sun 🌞
+          </p>
         </div>
       </section>
       <section data-background="#334b1d">
-        <img src="url:./assets/img/meadow-path.jpeg?as=webp" loading="lazy" alt="the park">
+        <img
+          src="url:./assets/img/meadow-path.jpeg?as=webp"
+          loading="lazy"
+          alt="the park"
+        />
         <div class="no-click">
           <h2>Let's go for a walk</h2>
-          <p>We'll bring our luck 🍀<br>and some cheese 🧀</p>
+          <p>We'll bring our luck 🍀<br />and some cheese 🧀</p>
         </div>
       </section>
       <section data-background="#180038">
-        <img src="url:./assets/img/abstract.jpeg?as=webp"  loading="lazy" alt="the park">
+        <img
+          src="url:./assets/img/abstract.jpeg?as=webp"
+          loading="lazy"
+          alt="the park"
+        />
         <div class="no-click">
           <h2>Relax 🌬</h2>
-          <p>Sparkles for this one ✨ <br> We are at the end 🛸</p>
+          <p>
+            Sparkles for this one ✨ <br />
+            We are at the end 🛸
+          </p>
         </div>
       </section>
       <div id="user-uploaded-images"></div>
-      <div id="upload-button" >
+      <div id="upload-button">
         <h2>Try with your own picture</h2>
-        <input type="file" class="no-click" id="image-input"style="display: none;" accept="image/png, image/jpeg, image/webp"/>
-        <input type="button" class="no-click" value="Browse..." onclick="document.getElementById('image-input').click();" />
+        <input
+          type="file"
+          class="no-click"
+          id="image-input"
+          style="display: none"
+          accept="image/png, image/jpeg, image/webp"
+        />
+        <input
+          type="button"
+          class="no-click"
+          value="Browse..."
+          onclick="document.getElementById('image-input').click();"
+        />
       </div>
-      
+
       <div class="tray-container">
         <div class="tray sticker-tray" id="sticker-tray">
-          <img class="selector" src="url:./assets/stickers/rainbow.png?as=webp" alt="Rainbow sticker" data-index="0"/>
-          <img class="selector" src="url:./assets/stickers/heart.png?as=webp" alt="Heart sticker" data-index="1"/>
-          <img class="selector" src="url:./assets/stickers/cactus.png?as=webp" alt="Cactus sticker" data-index="2"/>
-          <img class="selector" src="url:./assets/stickers/sun.png?as=webp" alt="Sun sticker" data-index="3"/>
-          <img class="selector" src="url:./assets/stickers/clover.png?as=webp" alt="Four leaf clover sticker" data-index="4"/>
-          <img class="selector" src="url:./assets/stickers/cheese.png?as=webp" alt="Cheese sticker" data-index="5"/>
-          <img class="selector" src="url:./assets/stickers/sparkle.png?as=webp" alt="Sparkle sticker" data-index="6"/>
-          <img class="selector" src="url:./assets/stickers/ufo.png?as=webp" alt="UFO Sticker" data-index="7"/>
-          <img class="selector" src="url:./assets/stickers/fire.png?as=webp" alt="Fire sticker" data-index="8"/>
-          <img class="selector" src="url:./assets/stickers/eyes.png?as=webp" alt="Eyes Sticker" class="" data-index="9"/>
+          <img
+            class="selector"
+            src="url:./assets/stickers/rainbow.png?as=webp"
+            alt="Rainbow sticker"
+            data-index="0"
+          />
+          <img
+            class="selector"
+            src="url:./assets/stickers/heart.png?as=webp"
+            alt="Heart sticker"
+            data-index="1"
+          />
+          <img
+            class="selector"
+            src="url:./assets/stickers/cactus.png?as=webp"
+            alt="Cactus sticker"
+            data-index="2"
+          />
+          <img
+            class="selector"
+            src="url:./assets/stickers/sun.png?as=webp"
+            alt="Sun sticker"
+            data-index="3"
+          />
+          <img
+            class="selector"
+            src="url:./assets/stickers/clover.png?as=webp"
+            alt="Four leaf clover sticker"
+            data-index="4"
+          />
+          <img
+            class="selector"
+            src="url:./assets/stickers/cheese.png?as=webp"
+            alt="Cheese sticker"
+            data-index="5"
+          />
+          <img
+            class="selector"
+            src="url:./assets/stickers/sparkle.png?as=webp"
+            alt="Sparkle sticker"
+            data-index="6"
+          />
+          <img
+            class="selector"
+            src="url:./assets/stickers/ufo.png?as=webp"
+            alt="UFO Sticker"
+            data-index="7"
+          />
+          <img
+            class="selector"
+            src="url:./assets/stickers/fire.png?as=webp"
+            alt="Fire sticker"
+            data-index="8"
+          />
+          <img
+            class="selector"
+            src="url:./assets/stickers/eyes.png?as=webp"
+            alt="Eyes Sticker"
+            class=""
+            data-index="9"
+          />
         </div>
         <div class="tray brush-tray" id="">
-          <div class="selector brush" id="large" data-brushSize="large" data-brushSize="largeBrush"></div>
-          <div class="selector brush" id="medium" data-brushSize="medium" data-brushSize="mediumBrush"></div>
-          <div class="selector brush" id="small" data-brushSize="small" data-brushSize="smallBrush"></div>
+          <div
+            class="selector brush"
+            id="large"
+            data-brushSize="large"
+            data-brushSize="largeBrush"
+          ></div>
+          <div
+            class="selector brush"
+            id="medium"
+            data-brushSize="medium"
+            data-brushSize="mediumBrush"
+          ></div>
+          <div
+            class="selector brush"
+            id="small"
+            data-brushSize="small"
+            data-brushSize="smallBrush"
+          ></div>
         </div>
       </div>
       <div class="stickers">
@@ -77,12 +178,17 @@
       </div>
     </main>
     <footer>
-      <div>A site by <a href="https://francesco.studio/">francesco.studio 👋</a></div>
+      <div>
+        A site by <a href="https://francesco.studio/">francesco.studio 👋</a>
+      </div>
     </footer>
     <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
     <![endif]-->
-    
+
     <script type="module" src="./scripts/script.js" async defer></script>
   </body>
 </html>

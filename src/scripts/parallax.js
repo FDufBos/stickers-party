@@ -9,7 +9,7 @@ const addMovement = () => {
 
   sections.forEach((section, index) => {
     //get middle of each section
-    
+
     const topSection = section.offsetTop;
     const midSection = topSection + section.offsetHeight * 0.4;
 
@@ -24,25 +24,25 @@ const addMovement = () => {
     //is the index divisible by 2
     //a.k.a. is the index's remainder 0? (modulo operator time: %)
     //this is also why distToSectionModifier is a let and not a const
-    if(window.innerWidth > 600){
+    if (window.innerWidth > 600) {
       if (index % 2 == 0) {
         distToSectionModifier = distanceToSection * -0.1;
       }
     }
-    
-    const uploadTitleTag = document.querySelector("#upload-button h2")
+
+    const uploadTitleTag = document.querySelector("#upload-button h2");
 
     //apply parallax
     contentTag.style.transform = `translateY(${distToSectionModifier}px)`;
 
     //check the background
-    if(topViewport > 3100){
-      bodyTag.style.backgroundColor = "white"
-      uploadTitleTag.style.color = "black"
+    if (topViewport > 3100) {
+      bodyTag.style.backgroundColor = "white";
+      uploadTitleTag.style.color = "black";
     } else if (distanceToSection > -300) {
       const dataBackground = section.getAttribute("data-background");
       bodyTag.style.backgroundColor = dataBackground;
-      uploadTitleTag.style.color = "white"
+      uploadTitleTag.style.color = "white";
     }
   });
 };
