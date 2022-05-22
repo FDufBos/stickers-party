@@ -1,5 +1,6 @@
 //✨✨✨Parallax & Background Color✨✨✨
-const sections = document.querySelectorAll("section");
+export const sections = document.querySelectorAll("section");
+
 export const bodyTag = document.querySelector("body");
 const addMovement = () => {
   //get top and then middle of window
@@ -29,14 +30,19 @@ const addMovement = () => {
       }
     }
     
+    const uploadTitleTag = document.querySelector("#upload-button h2")
 
     //apply parallax
     contentTag.style.transform = `translateY(${distToSectionModifier}px)`;
 
     //check the background
-    if (distanceToSection > -300) {
+    if(topViewport > 3100){
+      bodyTag.style.backgroundColor = "white"
+      uploadTitleTag.style.color = "black"
+    } else if (distanceToSection > -300) {
       const dataBackground = section.getAttribute("data-background");
       bodyTag.style.backgroundColor = dataBackground;
+      uploadTitleTag.style.color = "white"
     }
   });
 };

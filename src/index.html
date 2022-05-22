@@ -46,12 +46,13 @@
           <p>Sparkles for this one ✨ <br> We are at the end 🛸</p>
         </div>
       </section>
+      <div id="user-uploaded-images"></div>
       <div id="upload-button" >
-        <input type="file" class="no-click" id="image-input" name="selectImage" accept="image/jpeg, image/png, image/jpg"></input>
+        <h2>Try with your own picture</h2>
+        <input type="file" class="no-click" id="image-input"style="display: none;" accept="image/png, image/jpeg, image/webp"/>
+        <input type="button" class="no-click" value="Browse..." onclick="document.getElementById('image-input').click();" />
       </div>
-      <div id="display-image">
-
-      </div>
+      
       <div class="tray-container">
         <div class="tray sticker-tray" id="sticker-tray">
           <img class="selector" src="url:./assets/stickers/rainbow.png?as=webp" alt="Rainbow sticker" data-index="0"/>
