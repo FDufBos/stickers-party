@@ -71,6 +71,22 @@ h2 {
   font-weight: $h2-weight;
 }
 
+a{
+  text-decoration: none;
+  color: rgb(93, 93, 93);
+}
+
+a:hover{
+  background-color: blue;
+  color: white;
+  padding: 8px 0px;
+}
+
+a:visited{
+  color: rgb(155, 155, 155);
+  text-decoration: none;
+}
+
 input[type="button"] {
   padding: 16px 32px;
   font-size: 16px;
@@ -238,7 +254,7 @@ main {
     flex-direction: column;
     align-items: center;
     gap: 32px;
-    padding: 80px 0px 230px 0;
+    padding: 180px 0px 130px 0;
 
     @include respond-medium {
       margin: 120px auto;
@@ -393,7 +409,7 @@ footer {
   color: black;
   display: flex;
   justify-content: center;
-  margin: 100px 40px;
+  margin: 80px 40px;
   font-size: $footer-font-size;
 }
 

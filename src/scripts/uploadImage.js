@@ -1,5 +1,5 @@
 const userUploadDivTag = document.querySelector("#user-uploaded-images");
-const uploadTitleTag = document.querySelector("#upload-button h2");
+const uploadTitleTag = document.querySelector("#upload-button-container h2");
 //✨✨✨✨Add your own image✨✨✨✨
 const image_input = document.querySelector("#image-input");
 image_input.addEventListener("change", function () {
