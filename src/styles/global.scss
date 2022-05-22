@@ -411,6 +411,9 @@ footer {
   justify-content: center;
   margin: 80px 40px;
   font-size: $footer-font-size;
+  @include respond-medium {
+    margin-bottom: 200px;
+  }
 }
 
 .hidden {
