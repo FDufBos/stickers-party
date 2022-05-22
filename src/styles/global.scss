@@ -20,7 +20,6 @@ $color-dark: #0d0e0e;
     transform: scale(1);
     opacity: 1
   }
-
   100% {
     transform: scale(0);
     opacity: 0;
@@ -32,12 +31,10 @@ $color-dark: #0d0e0e;
     transform: scale(0);
     visibility: visible;
   }
-
   100% {
     transform: scale(1);
     visibility: visible;
   }
-
 }
 
 @mixin respond-medium {
@@ -72,26 +69,6 @@ h2 {
   font-size: $h2-size;
   line-height: $h2-leading;
   font-weight: $h2-weight;
-}
-
-input[type="file"] {
-  display: flex;
-  flex-direction: column;
-  -webkit-appearance: none;
-  text-align: left;
-  -webkit-rtl-ordering: left;
-  border: 1px solid #ff0a0a;
-  display: flex;
-  align-items: bottom;
-}
-
-input[type="file"]::-webkit-file-upload-button {
-  -webkit-appearance: none;
-  margin: 0 20 0 40px;
-  border: 1px solid #ff0a0a;
-  border-radius: 20px;
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#d2d0d0), to(#f0f0f0));
-  background-image: -moz-linear-gradient(90deg, #d2d0d0 0%, #f0f0f0 100%);
 }
 
 input[type="button"] {
@@ -140,8 +117,6 @@ header {
   }
 }
 
-
-
 main {
   max-width: 1000px;
   margin: 0 auto;
@@ -152,7 +127,6 @@ main {
 
     @include respond-medium {
       flex-direction: column-reverse;
-      ;
       width: 100%;
     }
   }
@@ -167,6 +141,7 @@ main {
     img {
       @include respond-medium {
         width: 70%;
+        
       }
 
     }
@@ -191,6 +166,7 @@ main {
       height: 100vh;
       padding: 0px 0px;
       margin: 0px;
+      overflow-x: hidden;
     }
 
     img {
@@ -203,6 +179,7 @@ main {
       @include respond-medium {
         width: 100%;
         gap: 0;
+        
       }
 
       @include respond-above1600() {
