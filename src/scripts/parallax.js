@@ -1,7 +1,7 @@
 //✨✨✨Parallax & Background Color✨✨✨
 export const sections = document.querySelectorAll("section");
-
 export const bodyTag = document.querySelector("body");
+
 const addMovement = () => {
   //get top and then middle of window
   const topViewport = window.pageYOffset;
@@ -36,7 +36,7 @@ const addMovement = () => {
     contentTag.style.transform = `translateY(${distToSectionModifier}px)`;
 
     //check the background
-    if (topViewport > 3100) {
+    if (topViewport > 2600) {
       bodyTag.style.backgroundColor = "white";
       uploadTitleTag.style.color = "black";
     } else if (distanceToSection > -300) {
